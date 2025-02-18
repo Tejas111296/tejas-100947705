@@ -11,21 +11,21 @@ steps:
     args: ['push', 'us-central1-docker.pkg.dev/My First Project/tejas-100947705/server:${COMMIT_SHA}']
 
 
-  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-    entrypoint: gcloud  # Use 'gcloud' directly instead of 'bash -c'
-    args:
-      - 'run'
-      - 'deploy'
-      - 'server'  # Your Cloud Run service name
-      - '--image'
-      - 'us-central1-docker.pkg.dev/My First Project/tejas-100947705/server:${COMMIT_SHA}'
-      - '--platform'
-      - 'managed'
-      - '--region'
-      - 'us-central1'
-      - '--port'
-      - '3000'
-      - '--allow-unauthenticated'
+  # - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  #   entrypoint: gcloud  # Use 'gcloud' directly instead of 'bash -c'
+  #   args:
+  #     - 'run'
+  #     - 'deploy'
+  #     - 'server'  # Your Cloud Run service name
+  #     - '--image'
+  #     - 'us-central1-docker.pkg.dev/My First Project/tejas-100947705/server:${COMMIT_SHA}'
+  #     - '--platform'
+  #     - 'managed'
+  #     - '--region'
+  #     - 'us-central1'
+  #     - '--port'
+  #     - '3000'
+  #     - '--allow-unauthenticated'
 
 options:
   defaultLogsBucketBehavior: REGIONAL_USER_OWNED_BUCKET  
