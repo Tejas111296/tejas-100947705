@@ -7,6 +7,6 @@ steps:
     ]
   # Push to Artifact Registry
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'us-central1-docker.pkg.dev/$PROJECT_ID/firstname-studentid/image:${COMMIT_SHA}']
+    args: ['push', 'us-central1-docker.pkg.dev/$PROJECT_ID/tejas-100947705/image:${COMMIT_SHA}']
 options:
   defaultLogsBucketBehavior: REGIONAL_USER_OWNED_BUCKET
