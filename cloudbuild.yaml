@@ -5,11 +5,10 @@ steps:
       'build', '-t',
       'us-central1-docker.pkg.dev/$PROJECT_ID/tejas-100947705/image:${COMMIT_SHA}', '.'
     ]
+
   # Push to Artifact Registry
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'us-central1-docker.pkg.dev/$PROJECT_ID/tejas-100947705/image:${COMMIT_SHA}']
-options:
-  defaultLogsBucketBehavior: REGIONAL_USER_OWNED_BUCKET
 
   # Deploy to Cloud Run
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
@@ -22,3 +21,6 @@ options:
           --region=us-central1 \
           --platform=managed \
           --quiet
+
+options:
+  defaultLogsBucketBehavior: REGIONAL_USER_OWNED_BUCKET
